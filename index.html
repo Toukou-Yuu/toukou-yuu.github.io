@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <script>self["MonacoEnvironment"] = (function (paths) {
+          return {
+            globalAPI: false,
+            getWorkerUrl : function (moduleId, label) {
+              var result =  paths[label];
+              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+                var currentUrl = String(window.location);
+                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
+                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                  var js = '/*' + label + '*/importScripts("' + result + '");';
+                  var blob = new Blob([js], { type: 'application/javascript' });
+                  return URL.createObjectURL(blob);
+                }
+              }
+              return result;
+            }
+          };
+        })({
+  "editorWorkerService": "/monacoeditorwork/editor.worker.bundle.js",
+  "css": "/monacoeditorwork/css.worker.bundle.js",
+  "html": "/monacoeditorwork/html.worker.bundle.js",
+  "json": "/monacoeditorwork/json.worker.bundle.js",
+  "typescript": "/monacoeditorwork/ts.worker.bundle.js",
+  "javascript": "/monacoeditorwork/ts.worker.bundle.js",
+  "less": "/monacoeditorwork/css.worker.bundle.js",
+  "scss": "/monacoeditorwork/css.worker.bundle.js",
+  "handlebars": "/monacoeditorwork/html.worker.bundle.js",
+  "razor": "/monacoeditorwork/html.worker.bundle.js"
+});</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEX19fXo6uzFzNKttsGgq7jR1tyToK65wMlkd4w2T2tNY3yCkaLb3+P///+lKv9tAAAAAnRSTlMAAHaTzTgAAAABYktHRA32tGH1AAAAB3RJTUUH5gMDDyAaOmYd5AAAALZJREFUKM9jYMABmBTQBIyUUfksAawOyHzGRAYGMQEkgRAQ4YrgsxuASOYCuIArkjoQAOoOBQKwSSAAMr8DCBgY2ALAAuZAPBMIgFQ5xAkggU6wAMIxM1eDBRBgZkc2msBMNBUQW0gBRgcZWRNgvmUE4urs3QfSEoAMkCA70JPHsneLN2+EsJE8CfM2jyOSt8FA5AADmowRhEIEPMQsZqSoQQ9kzGgABh5qRAEDrxjNN6wBuPwJAAfzJgfDRSZIAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTAzLTAzVDE1OjMyOjI2KzA4OjAwUSRj2AAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wMy0wM1QxNTozMjoyNiswODowMCB522QAAAAASUVORK5CYII=">
+    <title>Yools个人工作站</title>
+    <script type="module" crossorigin src="/assets/index.018ed43d.js"></script>
+    <link rel="stylesheet" href="/assets/index.7c677383.css">
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but Yools个人工作站 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    
+  </body>
+</html>
